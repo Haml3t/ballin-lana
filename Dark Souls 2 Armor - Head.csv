@@ -1,4 +1,4 @@
-Name,Phys,Str,Sls,Thr,Mag,Fire,Light,Dark,Poise,Poison,Bleed,Petrify,Curse,Dur,Weight,Scaling,Prerequisite,Reinforcement,Effect,Def/Weight,Poise/Weight,Magic/Weight,Total Defense,Total Def/Weight
+Name,Phys,Str,Sls,Thr,Mag,Fire,Light,Dark,Poise,Poison,Bleed,Petrify,Curse,Dur,Weight,Scaling,Prerequisite,Reinforcement,Effect,Def/Weight,Poise/Weight,Mag/Weight,Total Defense,Total Def/Weight
 Alonne Captian Helm,53,50,56,53,11,17,7,11,12,6,12,0,0,90,5.1,C,,Titanite,Fire Def +,10.39,2.35,2.25,205,40.2
 Alonne Captian Helm+10,106,100,112,106,22,34,15,22,12,11,25,0,0,90,5.1,C,,Titanite,Fire Def +,20.78,2.35,4.56,411,80.59
 Alonne Knight Helm,49,47,52,49,9,15,7,9,9,5,10,0,0,80,4.6,C,,Titanite,,10.65,1.96,2.17,188,40.87

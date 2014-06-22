@@ -1,4 +1,4 @@
-ARMOR_CSV = 'Dark Souls 2 Armor - Chest.csv'
-ARMOR_JSON = 'chestarmor.json'
+ARMOR_CSV = 'Dark Souls 2 Armor - Legs.csv'
+ARMOR_JSON = 'armor_legs.json'
 
-string_header_values = ["Scaling","Prerequisite","Reinforcement","Effect"]
+string_header_values = ["Scaling","Prerequisite","Reinforcement","Effect","Name"]

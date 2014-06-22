@@ -7,7 +7,7 @@ def makePieceDict(values):
 	global header
 	armorPiece = {}
 	for i in range(len(header)):
-		if values[i] and i > 0:			
+		if values[i]:			
 			if header[i] in string_header_values:
 				armorPiece[header[i]] = values[i]
 				
