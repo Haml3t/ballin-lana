@@ -3,11 +3,12 @@ import re
 from config import ARMOR_CSV, ARMOR_JSON, string_header_values
 
 mainArmor = {}
-def makePieceDict(values):
+def makePieceDict(values, name):
 	global header
 	armorPiece = {}
+	armorPiece['Name'] = name
 	for i in range(len(header)):
-		if values[i]:			
+		if values[i] and i > 0:			
 			if header[i] in string_header_values:
 				armorPiece[header[i]] = values[i]
 				
@@ -36,10 +37,10 @@ with open(ARMOR_CSV, 'r') as armorCsv:
 			
 			if armorName in mainArmor:
 				if reinforcement > mainArmor[armorName]["Reinforcement Value"]:
-					mainArmor[armorName] = makePieceDict(row)
+					mainArmor[armorName] = makePieceDict(row,armorName)
 					mainArmor[armorName]["Reinforcement Value"] = reinforcement
 			else:
-				mainArmor[armorName] = makePieceDict(row)
+				mainArmor[armorName] = makePieceDict(row,armorName)
 				mainArmor[armorName]["Reinforcement Value"] = reinforcement	
 			
 
