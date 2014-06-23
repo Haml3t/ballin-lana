@@ -37,29 +37,36 @@ def combination(headPiece, armsPiece, chestPiece, legsPiece, ID):
 			for p in pieces:
 				if h in p:
 					armorSet['totalPerformance'][h] = armorSet['totalPerformance'][h] + p[h]
+	#print armorSet
+			
 	return armorSet
 
 def allCombinations(headDict, armsDict, chestDict, legsDict):
 	ID = 0
-	allCombinationsDict = {}
 	for h in headDict:
 		for a in armsDict:
 			for c in chestDict:
 				for l in legsDict:
 					ID += 1
-					amorSet = combination(h, a, c, l, ID)
-					allCombinationsDict[ID] = armorSet
+					print ID
+					armorSet = combination(headDict[h], armsDict[a], chestDict[c], legsDict[l], ID)
+					print armorSet['totalPerformance']
+					armorSetWeight = armorSet['totalPerformance']['Weight']
+					jsonName = str(armorSetWeight) + ".json"
+					armorSetWeight[ID] = armorSet
+					with open(jsonName,"wb") as fp:
+						json.dump(armorSetWeight,fp)
 					percentComplete = 100*ID/75297026
-					if (percentComplete % 5) < 1:
+					if (percentComplete % 1) < 1:
 						logFile = open('all_armor_combination_log.txt', 'a')
 						progressDateTime = str(percentComplete) + "% complete " + (time.strftime("%H:%M:%S")) + " " + (time.strftime("%d/%m/%Y"))
 						logFile.write(progressDateTime)
 						print progressDateTime
-	with open(all_armor_combinations.json, 'w') as fp:
-		json.dump(allCombinationsDict,fp)
-					
+
+allCombinations(headDict, armsDict, chestDict, legsDict)
 
 """
+
 print len(headDict)
 print len(armsDict)
 print len(chestDict)
@@ -74,6 +81,6 @@ testCombo = combination(testHead, testArms, testChest, testLegs, 000000)
 print 'Head = '
 print testCombo['head']
 print 'Full Set = ' + str(testCombo['name'])
-print testCombo['totalPerformance']
-"""
+print testCombo['totalPerformance']['Weight']
 
+"""
