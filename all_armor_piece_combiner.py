@@ -52,8 +52,9 @@ def allCombinations(headDict, armsDict, chestDict, legsDict):
 					percentComplete = 100*ID/75297026
 					if (percentComplete % 5) < 1:
 						logFile = open('all_armor_combination_log.txt', 'a')
-						logFile.write(str(percentComplete) + "% complete " + (time.strftime("%H:%M:%S")) + " " + (time.strftime("%d/%m/%Y")))
-						print str(percentComplete) + "% complete " + (time.strftime("%H:%M:%S")) + " " + (time.strftime("%d/%m/%Y"))
+						progressDateTime = str(percentComplete) + "% complete " + (time.strftime("%H:%M:%S")) + " " + (time.strftime("%d/%m/%Y"))
+						logFile.write(progressDateTime)
+						print progressDateTime
 	with open(all_armor_combinations.json, 'w') as fp:
 		json.dump(allCombinationsDict,fp)
 					
